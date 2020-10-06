@@ -1,0 +1,29 @@
+{
+  "name": "script",
+  "version": "1.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "7.11.6",
+    "@babel/node": "7.10.5",
+    "@babel/preset-env": "7.11.5",
+    "@prisma/client": "2.8.0",
+    "babel-node": "0.0.1-security",
+    "dotenv": "8.2.0",
+    "graphql-tools": "6.2.4",
+    "graphql-yoga": "1.18.3",
+    "merge-graphql-schemas": "1.7.8",
+    "morgan": "1.10.0"
+  },
+  "devDependencies": {
+    "@prisma/cli": "2.8.0",
+    "nodemon": "2.0.4"
+  },
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/server.js",
+    "db_push": "npx prisma migrate save --name init --experimental & prisma migrate up --experimental & prisma generate",
+    "db_studio": "npx prisma studio"
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  }
+}

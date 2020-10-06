@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url = "***"
+}
+
+
+model User {
+  id Int  @default(autoincrement()) @id
+  username  String @unique
+  email String @unique
+  firstName String?  @default(value:"")
+  lastName  String? @default(value:"")
+  bio String
+  following User[]  @relation(name:"FollowRelation")
+  follower  User[]  @relation(name:"FollowRelation")
+  posts Post[]
+  likes Like[]
+  comments  Comment[]
+  rooms Room[]
+}
+
+model Post {
+  id Int  @default(autoincrement()) @id
+  user  User
+  files File[]
+  location  String
+  caption String
+  likes Like[]
+  comments  Comment[]
+}
+
+model Like{
+  id Int  @default(autoincrement()) @id
+  user  User
+  post  Post
+}
+
+model Comment{
+  id Int  @default(autoincrement()) @id
+  text  String
+  user  User
+  post  Post
+}
+
+model File {
+  id Int  @default(autoincrement()) @id
+  url String
+  post  Post
+}
+
+model Room {
+  id Int  @default(autoincrement()) @id
+  participants  User[]
+  messages  Message[]
+}
+
+model Message {
+  id Int  @default(autoincrement()) @id
+  text  String
+  from  User  @relation(name:"From")
+  // to  User  @relation(name:"To")
+  room  Room
+}

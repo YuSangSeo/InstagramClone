@@ -1,0 +1,448 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateModel",
+      "model": "Like"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Like",
+      "field": "id",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Like",
+          "field": "id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Like",
+          "field": "id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Like",
+          "field": "id"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateField",
+      "model": "Like",
+      "field": "user",
+      "type": "User",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Like",
+      "field": "post",
+      "type": "Post",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateModel",
+      "model": "Comment"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Comment",
+      "field": "id",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Comment",
+          "field": "id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Comment",
+          "field": "id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Comment",
+          "field": "id"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateField",
+      "model": "Comment",
+      "field": "text",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Comment",
+      "field": "user",
+      "type": "User",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Comment",
+      "field": "post",
+      "type": "Post",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateModel",
+      "model": "File"
+    },
+    {
+      "tag": "CreateField",
+      "model": "File",
+      "field": "id",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "File",
+          "field": "id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "File",
+          "field": "id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "File",
+          "field": "id"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateField",
+      "model": "File",
+      "field": "url",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "File",
+      "field": "post",
+      "type": "Post",
+      "arity": "Required"
+    },
+    {
+      "tag": "DeleteModel",
+      "model": "Profile"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Post",
+      "field": "user",
+      "type": "User",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Post",
+      "field": "files",
+      "type": "File",
+      "arity": "List"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Post",
+      "field": "location",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Post",
+      "field": "caption",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Post",
+      "field": "likes",
+      "type": "Like",
+      "arity": "List"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Post",
+      "field": "comments",
+      "type": "Comment",
+      "arity": "List"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Post",
+      "field": "createdAt"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Post",
+      "field": "title"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Post",
+      "field": "content"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Post",
+      "field": "published"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Post",
+      "field": "author"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Post",
+      "field": "authorId"
+    },
+    {
+      "tag": "CreateField",
+      "model": "User",
+      "field": "username",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "User",
+          "field": "username"
+        },
+        "directive": "unique"
+      }
+    },
+    {
+      "tag": "CreateField",
+      "model": "User",
+      "field": "firstName",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "User",
+          "field": "firstName"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "User",
+          "field": "firstName"
+        },
+        "directive": "default"
+      },
+      "argument": "value",
+      "value": "\"\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "User",
+      "field": "lastName",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "User",
+          "field": "lastName"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "User",
+          "field": "lastName"
+        },
+        "directive": "default"
+      },
+      "argument": "value",
+      "value": "\"\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "User",
+      "field": "bio",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "User",
+      "field": "following",
+      "type": "User",
+      "arity": "List"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "User",
+          "field": "following"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "User",
+          "field": "following"
+        },
+        "directive": "relation"
+      },
+      "argument": "name",
+      "value": "\"FollowRelation\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "User",
+      "field": "follower",
+      "type": "User",
+      "arity": "List"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "User",
+          "field": "follower"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "User",
+          "field": "follower"
+        },
+        "directive": "relation"
+      },
+      "argument": "name",
+      "value": "\"FollowRelation\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "User",
+      "field": "likes",
+      "type": "Like",
+      "arity": "List"
+    },
+    {
+      "tag": "CreateField",
+      "model": "User",
+      "field": "comments",
+      "type": "Comment",
+      "arity": "List"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "name"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "profile"
+    }
+  ]
+}

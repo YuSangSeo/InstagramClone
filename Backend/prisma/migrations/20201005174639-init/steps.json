@@ -1,0 +1,461 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateModel",
+      "model": "Profile"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Profile",
+      "field": "id",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Profile",
+          "field": "id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Profile",
+          "field": "id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Profile",
+          "field": "id"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateField",
+      "model": "Profile",
+      "field": "bio",
+      "type": "String",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Profile",
+      "field": "user",
+      "type": "User",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Profile",
+          "field": "user"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Profile",
+          "field": "user"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[userId]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Profile",
+          "field": "user"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[id]"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Profile",
+      "field": "userId",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Profile",
+          "field": "userId"
+        },
+        "directive": "unique"
+      }
+    },
+    {
+      "tag": "DeleteModel",
+      "model": "Market"
+    },
+    {
+      "tag": "DeleteModel",
+      "model": "Shop"
+    },
+    {
+      "tag": "DeleteModel",
+      "model": "marketComment"
+    },
+    {
+      "tag": "DeleteModel",
+      "model": "marketImage"
+    },
+    {
+      "tag": "DeleteModel",
+      "model": "postComment"
+    },
+    {
+      "tag": "DeleteModel",
+      "model": "postImage"
+    },
+    {
+      "tag": "DeleteModel",
+      "model": "shopComment"
+    },
+    {
+      "tag": "DeleteModel",
+      "model": "shopImage"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Post",
+      "field": "published",
+      "type": "Boolean",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Post",
+          "field": "published"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Post",
+          "field": "published"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "false"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Post",
+      "field": "author",
+      "type": "User",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Post",
+          "field": "author"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Post",
+          "field": "author"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[authorId]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Post",
+          "field": "author"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[id]"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Post",
+      "field": "authorId",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Post",
+      "field": "userId"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Post",
+      "field": "updatedAt"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Post",
+      "field": "views"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Post",
+      "field": "todayViews"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Post",
+      "field": "User"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Post",
+      "field": "postComment"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "Post",
+      "field": "postImage"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "Post",
+      "field": "id",
+      "type": "Int"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Post",
+          "field": "id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Post",
+          "field": "id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "Post",
+      "field": "content",
+      "arity": "Optional"
+    },
+    {
+      "tag": "DeleteDirective",
+      "location": {
+        "path": {
+          "tag": "Model",
+          "model": "Post",
+          "arguments": [
+            {
+              "name": "",
+              "value": "[userId]"
+            },
+            {
+              "name": "name",
+              "value": "\"userId\""
+            }
+          ]
+        },
+        "directive": "index"
+      }
+    },
+    {
+      "tag": "CreateField",
+      "model": "User",
+      "field": "email",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "User",
+          "field": "email"
+        },
+        "directive": "unique"
+      }
+    },
+    {
+      "tag": "CreateField",
+      "model": "User",
+      "field": "posts",
+      "type": "Post",
+      "arity": "List"
+    },
+    {
+      "tag": "CreateField",
+      "model": "User",
+      "field": "profile",
+      "type": "Profile",
+      "arity": "Optional"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "createdAt"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "updatedAt"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "avatar"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "password"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "phone"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "permit"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "auth"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "Market"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "Post"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "marketComment"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "postComment"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "User",
+      "field": "shopComment"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "User",
+      "field": "id",
+      "type": "Int"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "User",
+          "field": "id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "User",
+          "field": "id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "User",
+      "field": "name",
+      "arity": "Optional"
+    }
+  ]
+}
