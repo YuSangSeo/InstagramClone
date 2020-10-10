@@ -1,4 +1,7 @@
 import { adjectives,nouns } from "./words"
+import jwt from "jsonwebtoken";
+
+
 const mailgun = require("mailgun-js");
 require("dotenv").config();
 export const generateSecret = () =>{
@@ -19,7 +22,9 @@ export const sendSecretMail = (address, secret)=> {
         from: "vlvksbdof12@gmail.com",
         to: address,
         subject: "Login Secret for Instagram Clone",
-        html: `Hello! Your login secret it ${secret}.</br> Copy paste on the app/website to log in`
+        html: `Hello! Your login secret it <strong>${secret}</strong>.</br> Copy paste on the app/website to log in`
     }
     return sendMail(email);
 }
+
+export const generateToken = (id) => jwt.sign({id},process.env.JWT_SECRET);
